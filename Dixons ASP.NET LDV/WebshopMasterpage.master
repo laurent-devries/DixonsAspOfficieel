@@ -1,0 +1,13 @@
+﻿
+<%@ Master Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" Inherits="Dixons_ASP.NET_LDV.SiteMaster" %>
+
+<%--http://www.bootstrapzero.com/bootstrap-template/sidebar --%>
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <asp:ContentPlaceHolder ID="navbar" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <asp:ContentPlaceHolder ID="Content" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+
+

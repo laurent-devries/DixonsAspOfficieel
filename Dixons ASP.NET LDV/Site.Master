@@ -1,0 +1,132 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Dixons_ASP.NET_LDV.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - My ASP.NET Application</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <header role="banner">
+            <div class="nav navbar-fixed-top wrapper clearfix">
+                <p style="background-color: white;">Bezorging: 7 dagen per week, 33 winkels in Nederland</p>
+            </div>
+            <div class="wrapper clearfix">
+                <div class="logo">
+                    <a href="/Pages/Homepage.aspx">
+                        <img src="/Images/Dixons_Logo.jpg" alt="logo.jpg" style="width: 200px; height: 60px" />
+                    </a>
+                </div>
+                <div class="winkelmand">
+                    <a href="/Pages/Winkelwagen.aspx">
+                        <img src="/Images/shoppingcart.jpg" alt="winkelmand.jpg" style="width: 40px; height: 40px" />
+                    </a>
+                </div>
+            </div>
+            <div class="navbar navbar-inverse wrapper clearfix">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <div class="colorNav">
+                            <ul class="nav navbar-nav">
+                                <li class="dropdown">
+                                    <a href="Laptop.aspx" class="dropdown-toggle disabled" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Laptop <span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Action</a></li>
+                                        <li><a href="#">Another action</a></li>
+                                        <li><a href="#">Something else here</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="#">Separated link</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="Tablet.aspx" class="dropdown-toggle disabled" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tablet <span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Action</a></li>
+                                        <li><a href="#">Another action</a></li>
+                                        <li><a href="#">Something else here</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="#">Separated link</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="Smartphone.aspx" class="dropdown-toggle disabled" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Smartphone <span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Action</a></li>
+                                        <li><a href="#">Another action</a></li>
+                                        <li><a href="#">Something else here</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="#">Separated link</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="SmartLiving.aspx" class="dropdown-toggle disabled" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Smart Living <span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Action</a></li>
+                                        <li><a href="#">Another action</a></li>
+                                        <li><a href="#">Something else here</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="#">Separated link</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="PC.aspx" class="dropdown-toggle disabled" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">PC <span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Action</a></li>
+                                        <li><a href="#">Another action</a></li>
+                                        <li><a href="#">Something else here</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="#">Separated link</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle enabled" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Productbeheer <span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="/Pages/ProductToevoegen.aspx">Product Toevoegen</a></li>
+                                        <li><a href="/Pages/ProductVerwijderen.aspx">Product Verwijderen</a></li>
+                                        <li><a href="#">Something else here</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="#">Separated link</a></li>
+                                    </ul>
+                                </li>
+                                <li><a runat="server" href="Pages/Blog.aspx">Blog</a></li>
+                                <li><a runat="server" href="Pages/Contact.aspx">Contact</a></li>
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a runat="server" href="Pages/LogIn.aspx">LogIn</a></li>
+                                <li><a runat="server" href="Pages/Registration.aspx">Register</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="container">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+
+            <footer>
+                <p>&copy; <%: DateTime.Now.Year %> - Dixons Nederland</p>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>
