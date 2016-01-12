@@ -33,8 +33,8 @@ namespace Dixons_ASP.NET_LDV.Pages
                 {
                     TableCell c = new TableCell();
                     TableCell d = new TableCell();
-                    c.Controls.Add(new LiteralControl(products[0].Naam));
-                    d.Controls.Add(new LiteralControl(products[0].Prijs.ToString()));
+                    c.Controls.Add(new LiteralControl(products[j].Naam));
+                    d.Controls.Add(new LiteralControl(products[j].Prijs.ToString()));
                     r.Cells.Add(c);
                     r.Cells.Add(d);
                 }
