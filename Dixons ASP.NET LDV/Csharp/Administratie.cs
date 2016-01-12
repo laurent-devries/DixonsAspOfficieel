@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Core.Mapping;
 using System.Linq;
 using System.Web;
 using System.Web.UI.WebControls;
@@ -74,7 +75,18 @@ namespace Dixons_ASP.NET_LDV.Csharp
         {
             BlogBericht blogBericht = db.SelectBlogberichtFromId(id);
             return blogBericht;
+        }
 
+        public int FindCategorieFromList(string selectedName, List<Categorie> categorieList)
+        {
+            foreach (Categorie c in categorieList)
+            {
+                if (c.CategorieNaam == selectedName)
+                {
+                    return c.CategorieId;
+                }
+            }
+            return 0;
         }
     }
 }

@@ -10,24 +10,24 @@
 namespace Dixons_ASP.NET_LDV.Pages {
     
     
-    public partial class Winkelwagen {
+    public partial class CategoriePage {
         
         /// <summary>
-        /// Table1 control.
+        /// lbCategorien control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Table Table1;
+        protected global::System.Web.UI.WebControls.ListBox lbCategorien;
         
         /// <summary>
-        /// btnBestel control.
+        /// pnlProducts control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnBestel;
+        protected global::System.Web.UI.WebControls.Panel pnlProducts;
     }
 }

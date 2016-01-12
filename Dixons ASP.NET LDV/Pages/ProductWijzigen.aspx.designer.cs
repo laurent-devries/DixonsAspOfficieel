@@ -13,6 +13,42 @@ namespace Dixons_ASP.NET_LDV.Pages {
     public partial class ProductWijzigen {
         
         /// <summary>
+        /// ddlLoadProductCat1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlLoadProductCat1;
+        
+        /// <summary>
+        /// ddlLoadProductCat2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlLoadProductCat2;
+        
+        /// <summary>
+        /// ddlLoadProductCat3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlLoadProductCat3;
+        
+        /// <summary>
+        /// lbLoadProduct control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListBox lbLoadProduct;
+        
+        /// <summary>
         /// tbxNaam control.
         /// </summary>
         /// <remarks>

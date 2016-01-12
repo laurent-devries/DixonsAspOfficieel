@@ -20,23 +20,23 @@
                         <hr/>
                         <div class="row">
                             <div class="col-md-3">
-                                <img src="//placehold.it/300x300" class="img-responsive">
-                                <asp:Label CssClass="homepageCatTitle" ID="firstCategorieTitel" runat="server">First category</asp:Label>
+                                <a href="/Pages/Laptop.aspx"><img src="/Images/Products/laptop.jpg" class="img-responsive"></a>
+                                <asp:Label CssClass="homepageCatTitle" ID="firstCategorieTitel" runat="server">Laptop</asp:Label>
                                 <asp:ListBox CssClass="list-group" ID="lbSubCats1" runat="server"/>
                             </div>
                             <div class="col-md-3">
-                                <img src="//placehold.it/300x300" class="img-responsive">
-                                <asp:Label CssClass="homepageCatTitle" ID="secondCategorieTitel" runat="server">Second category</asp:Label>
+                                <a href="/Pages/Smartphone.aspx"><img src="/Images/Products/smartphone.jpg" class="img-responsive"></a>
+                                <asp:Label CssClass="homepageCatTitle" ID="secondCategorieTitel" runat="server">Smartphone</asp:Label>
                                 <asp:ListBox CssClass="list-group" ID="lbSubCats2" runat="server"/>
                             </div>
                             <div class="col-md-3">
-                                <img src="//placehold.it/300x300" class="img-responsive">
-                                <asp:Label CssClass="homepageCatTitle" ID="thirdCategorieTitel" runat="server">Third category</asp:Label>
+                                <a href="/Pages/Tablet.aspx"><img src="/Images/Products/tablet.jpg" class="img-responsive"></a>
+                                <asp:Label CssClass="homepageCatTitle" ID="thirdCategorieTitel" runat="server">Tablet</asp:Label>
                                 <asp:ListBox CssClass="list-group" ID="lbSubCats3" runat="server"/>
                             </div>
                             <div class="col-md-3">
-                                <img src="//placehold.it/300x300" class="img-responsive">
-                                <asp:Label CssClass="homepageCatTitle" ID="fourthCategorieTitel" runat="server">Fourth category</asp:Label>
+                                <a href="/Pages/PC.aspx"><img src="/Images/Products/pc.jpg" class="img-responsive"></a>
+                                <asp:Label CssClass="homepageCatTitle" ID="fourthCategorieTitel" runat="server">PC</asp:Label>
                                 <asp:ListBox CssClass="list-group" ID="lbSubCats4" runat="server"/>
                             </div>
                         </div>

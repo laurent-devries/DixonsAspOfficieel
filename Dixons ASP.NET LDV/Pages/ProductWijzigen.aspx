@@ -1,12 +1,36 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="ProductWijzigen.aspx.cs" Inherits="Dixons_ASP.NET_LDV.Pages.ProductWijzigen" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <h2>Product Toevoegen</h2>
+    <h2>Product Wijzigen</h2>
     <div class="row">
         <div class="col-md-5">
             <form class="form-horizontal" role="form" runat="server">
                 <div class="form-group">
                     <label class="control-label col-sm-4" for="email">Naam:</label>
+                    <div class="form-group">
+                        <label class="control-label col-sm-4" for="pwd">Categorie:</label>
+                        <div class="col-sm-8">
+                            <asp:DropDownList CssClass="form-control" ID="ddlLoadProductCat1" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlLoadProductCat1_OnSelectedIndexChanged"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-4" for="pwd">Subcategorie:</label>
+                        <div class="col-sm-8">
+                            <asp:DropDownList CssClass="form-control" ID="ddlLoadProductCat2" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlLoadProductCat2_OnSelectedIndexChanged" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-4" for="pwd">2e Subcategorie:</label>
+                        <div class="col-sm-8">
+                            <asp:DropDownList CssClass="form-control" ID="ddlLoadProductCat3" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlLoadProductCat3_OnSelectedIndexChanged"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-4" for="pwd">Producten:</label>
+                        <div class="col-sm-8">
+                            <asp:ListBox CssClass="list-group" ID="lbLoadProduct" runat="server" />
+                        </div>
+                    </div>
                     <div class="col-sm-8">
                         <asp:TextBox type="text" CssClass="form-control" ID="tbxNaam" runat="server"></asp:TextBox>
                     </div>
@@ -14,19 +38,19 @@
                 <div class="form-group">
                     <label class="control-label col-sm-4" for="pwd">Categorie:</label>
                     <div class="col-sm-8">
-                        <asp:DropDownList CssClass="form-control" ID="ddlCategorien" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlCategorien_OnSelectedIndexChanged"/>
+                        <asp:DropDownList CssClass="form-control" ID="ddlCategorien" runat="server" AutoPostBack="True" />
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="control-label col-sm-4" for="pwd">Subcategorie:</label>
                     <div class="col-sm-8">
-                        <asp:DropDownList CssClass="form-control" ID="ddlSubCategorien" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlSubCategorien_OnSelectedIndexChanged"/>
+                        <asp:DropDownList CssClass="form-control" ID="ddlSubCategorien" runat="server" AutoPostBack="True" />
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="control-label col-sm-4" for="pwd">2e Subcategorie:</label>
                     <div class="col-sm-8">
-                        <asp:DropDownList CssClass="form-control" ID="ddlSecondSubCategorien" runat="server" AutoPostBack="True"/>
+                        <asp:DropDownList CssClass="form-control" ID="ddlSecondSubCategorien" runat="server" AutoPostBack="True" />
                     </div>
                 </div>
                 <div class="form-group">
@@ -38,13 +62,13 @@
                 <div class="form-group">
                     <label class="control-label col-sm-4">Beschrijving:</label>
                     <div class="col-sm-8">
-                        <asp:TextBox style="height: 200px; resize: none;}" TextMode="MultiLine" type="text" CssClass="form-control" ID="tbxBeschrijving" runat="server"></asp:TextBox>
+                        <asp:TextBox Style="height: 200px; resize: none; }" TextMode="MultiLine" type="text" CssClass="form-control" ID="tbxBeschrijving" runat="server"></asp:TextBox>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="control-label col-sm-4">Bezorgtijd</label>
                     <div class="col-sm-8">
-                        <asp:DropDownList CssClass="form-control" ID="ddlBezorgtijd" runat="server"/>
+                        <asp:DropDownList CssClass="form-control" ID="ddlBezorgtijd" runat="server" />
                     </div>
                 </div>
                 <div class="form-group">
@@ -55,7 +79,7 @@
                 </div>
                 <div class="form-group">
                     <div class="col-sm-offset-4 col-sm-10">
-                        <asp:Button type="submit" CssClass="btn btn-default" runat="server" Text="Bevestigen" OnClick="OnClick" />
+                        <asp:Button type="submit" CssClass="btn btn-default" runat="server" Text="Bevestigen" />
                     </div>
                 </div>
             </form>

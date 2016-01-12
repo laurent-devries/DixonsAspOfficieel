@@ -197,12 +197,16 @@
     <Content Include="Images\Products\laptop.jpg" />
     <Content Include="Images\Products\laptop2.jpg" />
     <Content Include="Images\Products\laserpresenter.jpeg" />
+    <Content Include="Images\Products\pc.jpg" />
+    <Content Include="Images\Products\smartphone.jpg" />
     <Content Include="Images\Products\ssd.jpeg" />
+    <Content Include="Images\Products\tablet.jpg" />
     <Content Include="Images\Products\toetsenbordmuis.jpg" />
     <Content Include="Images\shoppingcart.jpg" />
     <Content Include="Images\windowsad.jpg" />
     <Content Include="Pages\About.aspx" />
     <Content Include="Pages\Bloglezer.aspx" />
+    <Content Include="Pages\CategoriePage.aspx" />
     <Content Include="Pages\LogIn.aspx" />
     <Content Include="Pages\ProductPage.aspx" />
     <Content Include="Pages\ProductToevoegen.aspx" />
@@ -306,6 +310,13 @@
     </Compile>
     <Compile Include="Pages\Bloglezer.aspx.designer.cs">
       <DependentUpon>Bloglezer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CategoriePage.aspx.cs">
+      <DependentUpon>CategoriePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\CategoriePage.aspx.designer.cs">
+      <DependentUpon>CategoriePage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\LogIn.aspx.cs">
       <DependentUpon>LogIn.aspx</DependentUpon>
