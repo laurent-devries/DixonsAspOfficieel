@@ -13,25 +13,31 @@ namespace Dixons_ASP.NET_LDV.Database
         {
             using (OracleConnection connection = Connection)
             {
-                string insert = "INSERT INTO ORDER_ADRES VALUES (:ORDERID, :ACCOUNTID, BEZORGADRES)";
+                string insert = "INSERT INTO ORDER_ADRES VALUES(:ORDERID, :ADRESID, 'BEZORGADRES')";
                 using (OracleCommand command = new OracleCommand(insert, connection))
                 {
-                    command.Parameters.Add(new OracleParameter("ORDERID", order.Account.AccountId));
+                    command.Parameters.Add(new OracleParameter("ORDERID", order.OrderId));
                     command.Parameters.Add(new OracleParameter("ADRESID", order.BezorgAdres.AdresId));
                     command.ExecuteNonQuery();
-                }
-            }
-            using (OracleConnection connection = Connection)
-            {
-                string insert = "INSERT INTO ORDER_ADRES VALUES (:ORDERID, :ACCOUNTID, OFFERTEADRES)";
-                using (OracleCommand command = new OracleCommand(insert, connection))
-                {
-                    command.Parameters.Add(new OracleParameter("ORDERID", order.Account.AccountId));
-                    command.Parameters.Add(new OracleParameter("ADRESID", order.FactuurAdres.AdresId));
-                    command.ExecuteNonQuery();
+                    
                 }
             }
         }
+
+        public void InsertOrderAdres2(Order order)
+        {
+            using (OracleConnection connection = Connection)
+            {
+                string insert2 = "INSERT INTO ORDER_ADRES VALUES (:ORDERID, :ADRESID, 'OFFERTEADRES')";
+                using (OracleCommand command2 = new OracleCommand(insert2, connection))
+                {
+                    command2.Parameters.Add(new OracleParameter("ORDERID", order.OrderId));
+                    command2.Parameters.Add(new OracleParameter("ADRESID", order.FactuurAdres.AdresId));
+                    command2.ExecuteNonQuery();
+                }
+            }
+        }
+
 
         public void InsertOrder(Order order)
         {
@@ -54,7 +60,8 @@ namespace Dixons_ASP.NET_LDV.Database
                     command.ExecuteNonQuery();
                 }
             }
-            InsertOrderAdres(order);
+
+            
         }
 
         public void InsertProduct(Product product)

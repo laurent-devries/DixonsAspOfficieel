@@ -99,6 +99,9 @@ namespace Dixons_ASP.NET_LDV.Csharp
         public void InsertOrder(Order order)
         {
             db.InsertOrder(order);
+            order.OrderId = db.SelectLastOrderId();
+            db.InsertOrderAdres(order);
+            db.InsertOrderAdres2(order);
         }
     }
 }

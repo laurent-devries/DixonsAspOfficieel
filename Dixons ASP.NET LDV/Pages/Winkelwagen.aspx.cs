@@ -23,7 +23,8 @@ namespace Dixons_ASP.NET_LDV.Pages
             {
                 products.Add(administratie.GetProduct(i));
             }
-            //TODO products[] niet hardcoded
+            
+
             int numrows = allAddedProducts.Count;
             int numcells = 1;
             for (int j = 0; j < numrows; j++)
@@ -64,8 +65,9 @@ namespace Dixons_ASP.NET_LDV.Pages
 
 
             Adres adres = new Adres(1, "6961PL", 3, "Zonnedauw", "Eerbeek");
+            Adres adres2 = new Adres(2, "5612BT", 2, "Visserstraat", "Eindhoven");
 
-            Order order = new Order(0, particulier, datum, null, adres, adres);
+            Order order = new Order(0, particulier, datum, null, adres, adres2);
             administratie.InsertOrder(order);
         }
     }
