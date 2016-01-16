@@ -204,7 +204,6 @@
     <Content Include="Images\Products\toetsenbordmuis.jpg" />
     <Content Include="Images\shoppingcart.jpg" />
     <Content Include="Images\windowsad.jpg" />
-    <Content Include="Pages\About.aspx" />
     <Content Include="Pages\Bloglezer.aspx" />
     <Content Include="Pages\CategoriePage.aspx" />
     <Content Include="Pages\LogIn.aspx" />
@@ -471,13 +470,6 @@
     <Compile Include="Database\InsertScripts.cs" />
     <Compile Include="Database\SelectScripts.cs" />
     <Compile Include="Database\UpdateScripts.cs" />
-    <Compile Include="Pages\About.aspx.cs">
-      <DependentUpon>About.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\About.aspx.designer.cs">
-      <DependentUpon>About.aspx</DependentUpon>
-    </Compile>
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />

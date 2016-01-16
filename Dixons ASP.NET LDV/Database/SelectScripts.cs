@@ -12,6 +12,27 @@ namespace Dixons_ASP.NET_LDV.Database
 {
     public partial class Database
     {
+        public Particulier selectAccountFromId(int accountId)
+        {
+            Particulier account = null;
+            using (OracleConnection connection = Connection)
+            {
+                string query = "SELECT * FROM ACCOUNT WHERE ACCOUNTID = :ID";
+                using (OracleCommand command = new OracleCommand(query, connection))
+                {
+                    command.Parameters.Add(new OracleParameter("ID", accountId));
+                    using (OracleDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            account = CreateParticulierFromReader(reader);
+                        }
+                    }
+                }
+            }
+            return account;
+        }
+
         public BlogBericht SelectBlogberichtFromId(int id)
         {
             BlogBericht blogBericht = null;

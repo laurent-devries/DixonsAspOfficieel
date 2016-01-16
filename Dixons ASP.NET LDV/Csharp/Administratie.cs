@@ -19,6 +19,13 @@ namespace Dixons_ASP.NET_LDV.Csharp
             
         }
 
+        public Particulier getParticulierFromId(int accountId)
+        {
+            Particulier particulier = db.selectAccountFromId(accountId);
+            return particulier;
+        }
+        
+        
         public Product GetProduct(int productId)
         {
             Product product = db.SelectProduct(productId);
@@ -87,6 +94,11 @@ namespace Dixons_ASP.NET_LDV.Csharp
                 }
             }
             return 0;
+        }
+
+        public void InsertOrder(Order order)
+        {
+            db.InsertOrder(order);
         }
     }
 }

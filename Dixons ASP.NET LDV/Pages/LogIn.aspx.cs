@@ -26,7 +26,8 @@ namespace Dixons_ASP.NET_LDV.Pages
 
             if (accountId != 0)
             {
-                Session["Username"] = tbxEmail.Text;
+                Session["email"] = tbxEmail.Text;
+                Session["wachtwoord"] = tbxWachtwoord.Text;
 
                 Response.Redirect("/Pages/Homepage.aspx");
             }

@@ -13,7 +13,7 @@ namespace Dixons_ASP.NET_LDV.Database
         {
             using (OracleConnection connection = Connection)
             {
-                string insert = "INSERT INTO ORDER_ADRES VALUES (:ORDERID, :ACCOUNTID, BEZORGADRES))";
+                string insert = "INSERT INTO ORDER_ADRES VALUES (:ORDERID, :ACCOUNTID, BEZORGADRES)";
                 using (OracleCommand command = new OracleCommand(insert, connection))
                 {
                     command.Parameters.Add(new OracleParameter("ORDERID", order.Account.AccountId));
@@ -23,7 +23,7 @@ namespace Dixons_ASP.NET_LDV.Database
             }
             using (OracleConnection connection = Connection)
             {
-                string insert = "INSERT INTO ORDER_ADRES VALUES (:ORDERID, :ACCOUNTID, OFFERTEADRES))";
+                string insert = "INSERT INTO ORDER_ADRES VALUES (:ORDERID, :ACCOUNTID, OFFERTEADRES)";
                 using (OracleCommand command = new OracleCommand(insert, connection))
                 {
                     command.Parameters.Add(new OracleParameter("ORDERID", order.Account.AccountId));
@@ -35,21 +35,21 @@ namespace Dixons_ASP.NET_LDV.Database
 
         public void InsertOrder(Order order)
         {
-            string dagstring = order.Datum.Day.ToString();
+            string dagstring = DateTime.Now.Day.ToString();
             if (dagstring.Length < 2)
             {
                 dagstring = '0' + dagstring;
             }
-            string datumString = dagstring + 
-                '-' + order.Datum.Month.ToString() + 
-                '-' + order.Datum.Year.ToString();
+            string datumString = dagstring +
+                '-' + DateTime.Now.Month.ToString() +
+                '-' + DateTime.Now.Year.ToString();
 
             using (OracleConnection connection = Connection)
             {
-                string insert = "INSERT INTO ORDER VALUES (seq_Order_ID.nextval, :ACCOUNTID, TO_DATE(:DATUM, 'DD-MM-YYYY'))";
+                string insert = "INSERT INTO \"Order\" VALUES (seq_Order_ID.nextval, :ACCOUNTID, TO_DATE(:DATUM, 'DD-MM-YYYY'))";
                 using (OracleCommand command = new OracleCommand(insert, connection))
                 {
-                    command.Parameters.Add(new OracleParameter("ACCOUNTID", order.Account.AccountId));
+                    command.Parameters.Add(new OracleParameter("ACCOUNTID", order.Account.AccountId.ToString()));
                     command.Parameters.Add(new OracleParameter("DATUM", datumString));
                     command.ExecuteNonQuery();
                 }

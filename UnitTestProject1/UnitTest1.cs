@@ -44,6 +44,8 @@ namespace UnitTestProject1
             Assert.AreEqual("TestBezorgtijd", startProduct.Bezorgtijd);
             Assert.AreEqual("AfbeeldingPath", startProduct.AfbeeldingPath);
             Assert.AreEqual(categorie, startProduct.Categorie);
+
+            admin.DeleteProduct(startProduct);
         }
 
         //Controleer of de functie GetProduct het juiste product teruggeeft.
@@ -87,7 +89,6 @@ namespace UnitTestProject1
             Assert.AreEqual(1, blogBericht.Categorie.CategorieId, "categorieId fout");
             Assert.IsNotNull(blogBericht.Tekst, "Text fout");
             Assert.AreEqual(blogBericht.AfbeeldingPath, "");
-
         }
     }
 }

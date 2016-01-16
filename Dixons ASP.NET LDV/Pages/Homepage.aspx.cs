@@ -13,7 +13,7 @@ namespace Dixons_ASP.NET_LDV
         {
             if (Session["Username"] != null)
             {
-                lblIngelogd.Text = "Ingelogd als: " + Session["Username"].ToString();
+                lblIngelogd.Text = "Ingelogd als: " + Session["email"].ToString();
             }
 
         }
