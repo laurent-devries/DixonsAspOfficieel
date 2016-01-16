@@ -11,9 +11,10 @@ namespace Dixons_ASP.NET_LDV
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["Username"] != null)
+            if (Session["email"] != null)
             {
                 lblIngelogd.Text = "Ingelogd als: " + Session["email"].ToString();
+                
             }
 
         }

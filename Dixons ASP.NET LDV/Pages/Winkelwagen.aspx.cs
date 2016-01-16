@@ -16,45 +16,49 @@ namespace Dixons_ASP.NET_LDV.Pages
         protected void Page_Load(object sender, EventArgs e)
         {
             administratie = new Administratie();
-            ArrayList allAddedProducts = (ArrayList) Session["Cart"];
-            List<Product> products = new List<Product>(allAddedProducts.Count);
-
-            foreach (int i in allAddedProducts)
+            ArrayList allAddedProducts = (ArrayList)Session["Cart"];
+            if (allAddedProducts.Count >= 1)
             {
-                products.Add(administratie.GetProduct(i));
-            }
-            
+                List<Product> products = new List<Product>(allAddedProducts.Count);
 
-            int numrows = allAddedProducts.Count;
-            int numcells = 1;
-            for (int j = 0; j < numrows; j++)
-            {
-                TableRow r = new TableRow();
-                for (int i = 0; i < numcells; i++)
+                foreach (int i in allAddedProducts)
                 {
-                    TableCell c = new TableCell();
-                    TableCell d = new TableCell();
-                    c.Controls.Add(new LiteralControl(products[j].Naam));
-                    d.Controls.Add(new LiteralControl(products[j].Prijs.ToString()));
-                    r.Cells.Add(c);
-                    r.Cells.Add(d);
+                    products.Add(administratie.GetProduct(i));
                 }
-                Table1.Rows.Add(r);
-            }
 
-            decimal totaalPrijs = 0;
-            foreach (Product p in products)
-            {
-                totaalPrijs += p.Prijs;
+
+                int numrows = allAddedProducts.Count;
+                int numcells = 1;
+                for (int j = 0; j < numrows; j++)
+                {
+                    TableRow r = new TableRow();
+                    for (int i = 0; i < numcells; i++)
+                    {
+                        TableCell c = new TableCell();
+                        TableCell d = new TableCell();
+                        c.Controls.Add(new LiteralControl(products[j].Naam));
+                        d.Controls.Add(new LiteralControl(products[j].Prijs.ToString()));
+                        r.Cells.Add(c);
+                        r.Cells.Add(d);
+                    }
+                    Table1.Rows.Add(r);
+                }
+
+                decimal totaalPrijs = 0;
+                foreach (Product p in products)
+                {
+                    totaalPrijs += p.Prijs;
+                }
+                TableRow totaalPrijsRow = new TableRow();
+                TableCell t = new TableCell();
+                TableCell prijs = new TableCell();
+                t.Controls.Add(new LiteralControl("Totaalprijs"));
+                prijs.Controls.Add(new LiteralControl(totaalPrijs.ToString()));
+                totaalPrijsRow.Cells.Add(t);
+                totaalPrijsRow.Cells.Add(prijs);
+                Table1.Rows.Add(totaalPrijsRow);
+
             }
-            TableRow totaalPrijsRow = new TableRow();
-            TableCell t = new TableCell();
-            TableCell prijs = new TableCell();
-            t.Controls.Add(new LiteralControl("Totaalprijs"));
-            prijs.Controls.Add(new LiteralControl(totaalPrijs.ToString()));
-            totaalPrijsRow.Cells.Add(t);
-            totaalPrijsRow.Cells.Add(prijs);
-            Table1.Rows.Add(totaalPrijsRow);
         }
 
         protected void btnBestel_OnClick(object sender, EventArgs e)
