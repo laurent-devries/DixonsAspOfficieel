@@ -11,6 +11,13 @@ namespace Dixons_ASP.NET_LDV.Database
 {
     public partial class Database
     {
+        /*
+         *In de CreateScript partial class van de database klasse worden alle functies gemaakt om waarden 
+         *uit de variabele reader te halen
+         *Vervolgens wordt er van deze uit de database gereturnde variabelen een instantie van een bepaald
+         *object gemaakt. Deze instantie wordt vervolgens door de methode gereturned. Al deze functies
+         *heten: Create"objectnaam"FromReader.
+        */
         public Order CreateOrderFromReader(OracleDataReader reader)
         {
             int orderId;
