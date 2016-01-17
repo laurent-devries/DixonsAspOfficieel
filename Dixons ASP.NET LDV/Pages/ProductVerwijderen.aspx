@@ -12,7 +12,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="control-label col-sm-4" for="pwd">Subcategorie:</label><a href="ProductVerwijderen.aspx">ProductVerwijderen.aspx</a>
+                    <label class="control-label col-sm-4" for="pwd">Subcategorie:</label>
                     <div class="col-sm-8">
                         <asp:DropDownList CssClass="form-control" ID="ddlSubCategorien" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlSubCategorien_OnSelectedIndexChanged"/>
                     </div>

@@ -26,7 +26,7 @@ namespace Dixons_ASP.NET_LDV.Pages
                 lblTitle.Text = blogBericht.Titel;
                 lblText.Text = blogBericht.Tekst;
                 lblDatum.Text = blogBericht.Datum.ToString();
-                imgImage.ImageUrl = "~/Images/Products/" + blogBericht.AfbeeldingPath;
+                imgImage.ImageUrl = "~/Images/Blog/" + blogBericht.AfbeeldingPath;
             }
         }
     }
