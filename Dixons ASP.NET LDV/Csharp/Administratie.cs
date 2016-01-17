@@ -125,5 +125,11 @@ namespace Dixons_ASP.NET_LDV.Csharp
         {
            db.UpdateExemplaarMetOrder(serienummer, orderId);   
         }
+
+        public List<Categorie> LaadSubCategories(int parentCategorieId)
+        {
+            List<Categorie> categories = db.GetAllSecondChildCategorien(parentCategorieId);
+            return categories;
+        } 
     }
 }
