@@ -96,12 +96,34 @@ namespace Dixons_ASP.NET_LDV.Csharp
             return 0;
         }
 
+        public int lastOrderId()
+        {
+            return db.SelectLastOrderId();
+        }
+        
+
         public void InsertOrder(Order order)
         {
             db.InsertOrder(order);
             order.OrderId = db.SelectLastOrderId();
             db.InsertOrderAdres(order);
             db.InsertOrderAdres2(order);
+        }
+
+        public int selectLastExemplaar()
+        {
+            int lastEx = db.SelectLastExemplaar();
+            return lastEx;
+        }
+
+        public void InsertExemplaar(Exemplaar exemplaar, Order order)
+        {
+            db.InsertExemplaar(exemplaar, order);
+        }
+
+        public void UpdateExemplaarOrderId(int serienummer, int orderId)
+        {
+           db.UpdateExemplaarMetOrder(serienummer, orderId);   
         }
     }
 }

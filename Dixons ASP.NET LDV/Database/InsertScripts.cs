@@ -9,6 +9,21 @@ namespace Dixons_ASP.NET_LDV.Database
 {
     public partial class Database
     {
+        public void InsertExemplaar(Exemplaar exemplaar, Order order)
+        {
+            using (OracleConnection connection = Connection)
+            {
+                string insert = "INSERT INTO EXEMPLAAR VALUES (seq_Exemplaar_ID.nextval, :ORDERID, :PRODUCTID, :VERKOOPPRIJS)";
+                using (OracleCommand command = new OracleCommand(insert, connection))
+                {
+                    command.Parameters.Add(new OracleParameter("ORDERID", null));
+                    command.Parameters.Add(new OracleParameter("PRODUCT", exemplaar.Product.ProductId));
+                    command.Parameters.Add(new OracleParameter("VERKOOPPRIJS", exemplaar.Verkoopprijs));
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+        
         public void InsertOrderAdres(Order order)
         {
             using (OracleConnection connection = Connection)

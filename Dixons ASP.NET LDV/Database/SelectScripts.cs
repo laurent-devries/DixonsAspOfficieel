@@ -33,6 +33,28 @@ namespace Dixons_ASP.NET_LDV.Database
             return account;
         }
 
+
+        public int SelectLastExemplaar()
+        {
+            int orderId = 0;
+            using (OracleConnection connection = Connection)
+            {
+                string query = "SELECT MAX(SERIENUMMER) AS MAXSERIENUMMER FROM EXEMPLAAR";
+                using (OracleCommand command = new OracleCommand(query, connection))
+                {
+                    using (OracleDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            orderId = Convert.ToInt32(reader["MAXSERIENUMMER"]); ;
+                        }
+                    }
+                }
+            }
+            return orderId;
+        }
+
+
         public int SelectLastOrderId()
         {
             int orderId = 0;
