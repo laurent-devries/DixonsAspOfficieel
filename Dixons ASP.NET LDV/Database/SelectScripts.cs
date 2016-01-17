@@ -197,10 +197,10 @@ namespace Dixons_ASP.NET_LDV.Database
                     command.Parameters.Add(new OracleParameter("ParaID", productId));
                     using (OracleDataReader reader = command.ExecuteReader())
                     {
-                        while (reader.Read())
-                        {
+                        //while (reader.Read())
+                        //{
                             product = CreateProductFromReader(reader);
-                        }
+                        //}
 
                     }
                 }

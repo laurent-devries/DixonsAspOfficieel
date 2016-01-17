@@ -24,8 +24,6 @@ namespace UnitTestProject1
         }
 
 
-
-
         [TestMethod]
         public void TestProductToevoegen()
         {
@@ -48,25 +46,6 @@ namespace UnitTestProject1
             admin.DeleteProduct(startProduct);
         }
 
-        //Controleer of de functie GetProduct het juiste product teruggeeft.
-        [TestMethod]
-        public void TestGetProduct()
-        {
-            /* gebruikte insert:
-           insert into Product(PRODUCTID, CATEGORIEID, NAAM, PRIJS, BESCHRIJVING, BEZORGTIJD, AFBEELDINGPATH)
-           VALUES(seq_Product_ID.NEXTVAL, 6, 'HP 14-ac002nd', 249.00, 'Een ingebouwde Intel Celeron processor zorgt voor goede prestaties. Deze processor is geschikt voor Office, e-mail, browsen en het afspelen van multimedia. Het maakt deze laptop geschikt voor de alledaagse taken, 
-           die het zonder poespas zal uitvoeren.', 'Alleen af te halen', 'laptop.jpg'); */
-            //TODO
-
-            controleProduct = admin.GetProduct(1);
-            Assert.AreEqual(1, controleProduct.ProductId);
-            Assert.AreEqual(6, controleProduct.Categorie.CategorieId);
-            Assert.AreEqual("HP 14-ac002nd", controleProduct.Naam);
-            Assert.AreEqual((decimal)249.00, controleProduct.Prijs);
-            Assert.IsNotNull(controleProduct.Beschrijving);
-            Assert.AreEqual("Alleen af te halen", controleProduct.Bezorgtijd);
-            Assert.AreEqual("laptop.jpg", controleProduct.AfbeeldingPath);
-        }
 
         [TestMethod]
         public void FindParticulier()
@@ -88,7 +67,135 @@ namespace UnitTestProject1
             Assert.AreEqual(1, blogBericht.BlogBerichtId, "id fout");
             Assert.AreEqual(1, blogBericht.Categorie.CategorieId, "categorieId fout");
             Assert.IsNotNull(blogBericht.Tekst, "Text fout");
-            Assert.AreEqual(blogBericht.AfbeeldingPath, "");
+            Assert.AreEqual(blogBericht.AfbeeldingPath, "blogImage.jpg");
+        }
+
+        [TestMethod]
+        //Test de classes 
+        public void AccountTest()
+        {
+            Account account = new Particulier(1, "Voornaam", "Achternaam", "0619199919", true, 
+                "0677766543", DateTime.Now, null, true, "email@email.nl","wachtwoord", "soort");
+            
+            Assert.AreEqual("Voornaam", account.Voornaam);
+            Assert.AreEqual("Achternaam", account.Achternaam);
+            Assert.AreEqual("0619199919", account.Telefoonnummer);
+            Assert.IsTrue(account.SmsFunctie);
+            Assert.AreEqual("0677766543", account.MobielNummer);
+            Assert.IsNull(account.Twitter);
+            Assert.IsTrue(account.Nieuwsbrief);
+            Assert.AreEqual("email@email.nl", account.Email);
+            Assert.AreEqual("wachtwoord", account.Wachtwoord);
+            Assert.AreEqual("soort", account.Soort);
+        }
+
+        [TestMethod]
+        public void AdresTest()
+        {
+            Adres adres = new Adres(99, "postcode", 99, "straat", "plaats");
+            Assert.AreEqual(99, adres.AdresId);
+            Assert.AreEqual("postcode", adres.Postcode);
+            Assert.AreEqual(99, adres.Huisnummer);
+            Assert.AreEqual("straat", adres.Straat);
+            Assert.AreEqual("plaats", adres.Plaats);
+        }
+
+        [TestMethod]
+        public void Bedrijf()
+        {
+            Bedrijf bedrijf = new Bedrijf(1, "voornaam", "achternaam", "telefoonnummer", true, 
+                "mobielnummer", DateTime.Now, "twitter", true, "email", "wachtwoord",
+                "soort", "bedrijfsnaam", "ondernemingsnummer", "btwnummer");
+
+            Assert.AreEqual(1, bedrijf.AccountId);
+            Assert.AreEqual("voornaam", bedrijf.Voornaam);
+            Assert.AreEqual("achternaam", bedrijf.Achternaam);
+            Assert.AreEqual("telefoonnummer", bedrijf.Telefoonnummer);
+            Assert.IsTrue(bedrijf.SmsFunctie);
+            Assert.AreEqual("mobielnummer", bedrijf.MobielNummer);
+            Assert.AreEqual("twitter", bedrijf.Twitter);
+            Assert.IsTrue(bedrijf.Nieuwsbrief);
+            Assert.AreEqual("email", bedrijf.Email);
+            Assert.AreEqual("wachtwoord", bedrijf.Wachtwoord);
+            Assert.AreEqual("soort", bedrijf.Soort);
+            Assert.AreEqual("bedrijfsnaam", bedrijf.Bedrijfsnaam);
+            Assert.AreEqual("ondernemingsnummer", bedrijf.Ondernemingsnummer);
+            Assert.AreEqual("btwnummer", bedrijf.BtwNummer);
+
+        }
+
+
+        [TestMethod]
+        public void BerichtTest()
+        {
+            Bericht bericht = new Bericht(1, "onderwerp", "tekst");
+            Assert.AreEqual(1, bericht.BerichtId);
+            Assert.AreEqual("onderwerp", bericht.Onderwerp);
+            Assert.AreEqual("tekst", bericht.Tekst);
+        }
+
+        [TestMethod]
+        public void BlogBerichtTest()
+        {
+            BlogBericht blogBericht = new BlogBericht(1, "titel", DateTime.Now, 
+                "tekst", "afbeeldingpath", null);
+            Assert.AreEqual(1, blogBericht.BlogBerichtId);
+            Assert.AreEqual("titel", blogBericht.Titel);
+            Assert.AreEqual("tekst", blogBericht.Tekst);
+            Assert.AreEqual("afbeeldingpath", blogBericht.AfbeeldingPath);
+            Assert.IsNull(blogBericht.Categorie);
+        }
+
+        [TestMethod]
+        public void CategorieTest()
+        {
+            Categorie categorieTest = new Categorie(1, "naam", 2);
+            Assert.AreEqual(1, categorieTest.CategorieId);
+            Assert.AreEqual("naam", categorieTest.CategorieNaam);
+            Assert.AreEqual(2, categorieTest.CategorieIdParent);
+        }
+
+        [TestMethod]
+        public void ExemplaarTest()
+        {
+            Exemplaar exemplaar = new Exemplaar(1, 1, null);
+            Assert.AreEqual(1, exemplaar.Serienummer);
+            Assert.AreEqual(1, exemplaar.Verkoopprijs);
+            Assert.IsNull(exemplaar.Product);
+        }
+
+        [TestMethod]
+        public void OrderTest()
+        {
+            Order order = new Order(1, null, DateTime.Now, null, null, null);
+            Assert.AreEqual(1, order.OrderId);
+            Assert.IsNull(order.Exemplaren);
+            Assert.IsNull(order.Account);
+            Assert.IsNull(order.BezorgAdres);
+            Assert.IsNull(order.FactuurAdres);
+        }
+
+        [TestMethod]
+        public void ProductTest()
+        {
+            Product product = new Product(1, "naam", 1, "beschrijving", "bezorgtijd",
+                "afbeeldingpath", null, null);
+            
+            Assert.AreEqual(1, product.ProductId);
+            Assert.AreEqual("naam", product.Naam);
+            Assert.AreEqual(1, product.Prijs);
+            Assert.AreEqual("beschrijving", product.Beschrijving);
+            Assert.AreEqual("bezorgtijd", product.Bezorgtijd);
+            Assert.IsNull(product.Specificaties);
+            Assert.IsNull(product.Categorie);
+        }
+
+        [TestMethod]
+        public void SpecificatieTest()
+        {
+            Specificatie specificatie = new Specificatie(1, "naam");
+            Assert.AreEqual(1, specificatie.SpecificatieId);
+            Assert.AreEqual("naam", specificatie.Naam);
         }
     }
 }
