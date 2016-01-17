@@ -4,7 +4,7 @@
     <div class="row">
         <form class="form-horizontal" role="form" runat="server">
             <div class="col-md-6">
-                <asp:Image ID="imgImage" CssClass="blogPaginablogImage" runat="server" />
+                <asp:Image ID="imgImage" CssClass="blogPaginablogImage" AlternateText="blogAfbeelding" runat="server" />
             </div>
             <div class="col-md-6">
                 <asp:Label ID="lblTitle" CssClass="blogPaginablogTitel" runat="server"></asp:Label>

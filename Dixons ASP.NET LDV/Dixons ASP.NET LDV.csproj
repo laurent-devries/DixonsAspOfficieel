@@ -205,6 +205,7 @@
     <Content Include="Images\shoppingcart.jpg" />
     <Content Include="Images\windowsad.jpg" />
     <Content Include="Pages\Bloglezer.aspx" />
+    <Content Include="Pages\BlogToevoegen.aspx" />
     <Content Include="Pages\CategoriePage.aspx" />
     <Content Include="Pages\LogIn.aspx" />
     <Content Include="Pages\ProductPage.aspx" />
@@ -301,6 +302,13 @@
     </Compile>
     <Compile Include="Pages\Bloglezer.aspx.designer.cs">
       <DependentUpon>Bloglezer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\BlogToevoegen.aspx.cs">
+      <DependentUpon>BlogToevoegen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\BlogToevoegen.aspx.designer.cs">
+      <DependentUpon>BlogToevoegen.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\CategoriePage.aspx.cs">
       <DependentUpon>CategoriePage.aspx</DependentUpon>

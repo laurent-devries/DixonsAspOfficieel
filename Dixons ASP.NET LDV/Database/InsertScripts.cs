@@ -9,6 +9,25 @@ namespace Dixons_ASP.NET_LDV.Database
 {
     public partial class Database
     {
+        public void InsertBlogBericht(BlogBericht blog)
+        {
+            using (OracleConnection connection = Connection)
+            {
+                string insert = "INSERT INTO BLOGBERICHT VALUES (seq_BlogBericht_ID.nextval, :CATEGORIEID, :PRODUCTID, :TITEL, :DATUM, :TEKST, :AFBEELDINGPATH)";
+                using (OracleCommand command = new OracleCommand(insert, connection))
+                {
+                    command.Parameters.Add(new OracleParameter("CATEGORIEID", blog.Categorie.CategorieId));
+                    command.Parameters.Add(new OracleParameter("PRODUCTID", null));
+                    command.Parameters.Add(new OracleParameter("TITEL", blog.Titel));
+                    command.Parameters.Add(new OracleParameter("DATUM", blog.Datum));
+                    command.Parameters.Add(new OracleParameter("TEKST", blog.Tekst));
+                    command.Parameters.Add(new OracleParameter("AFBEELDINGPATH", blog.AfbeeldingPath));
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
+
         public void InsertExemplaar(Exemplaar exemplaar, Order order)
         {
             using (OracleConnection connection = Connection)

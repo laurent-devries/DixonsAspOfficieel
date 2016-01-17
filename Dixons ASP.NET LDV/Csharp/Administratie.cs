@@ -149,5 +149,10 @@ namespace Dixons_ASP.NET_LDV.Csharp
             List<Categorie> categories = db.GetAlleParentCategorien();
             return categories;
         }
+
+        public void InsertBlogBericht(BlogBericht blogbericht)
+        {
+            db.InsertBlogBericht(blogbericht);
+        }
     }
 }
