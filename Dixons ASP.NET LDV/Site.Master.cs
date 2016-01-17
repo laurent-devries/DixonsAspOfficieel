@@ -55,6 +55,11 @@ namespace Dixons_ASP.NET_LDV
                 // Set Anti-XSRF token
                 ViewState[AntiXsrfTokenKey] = Page.ViewStateUserKey;
                 ViewState[AntiXsrfUserNameKey] = Context.User.Identity.Name ?? String.Empty;
+
+                if (Session["email"] != null)
+                {
+                    
+                }
             }
             else
             {

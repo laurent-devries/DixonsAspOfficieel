@@ -6,6 +6,8 @@
         <div class="container">
             <div class="row">
                 <form class="form-control" runat="server">
+                    <%--Een tabel waar alle in de winkelwagen gestopte producten in beeld komen met een 
+                        totaalprijs--%>
                     <asp:Table ID="Table1"
                         GridLines="Both"
                         HorizontalAlign="Left"

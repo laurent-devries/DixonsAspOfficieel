@@ -5,6 +5,7 @@
     <h2>Profielgegevens</h2>
     <div class="row">
         <div class="col-md-5">
+            <%--Op deze pagina kan een account worden aangemaakt--%>
             <form class="form-horizontal" role="form" runat="server">
                 <div class="form-group">
                     <label class="control-label col-sm-4" for="email">Voornaam:</label>

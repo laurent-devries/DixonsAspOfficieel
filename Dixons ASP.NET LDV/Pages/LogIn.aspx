@@ -2,6 +2,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <form runat="server">
+        <%--Op deze pagina kan er met bestaande gegevens ingelogd worden--%>
         <label>Email</label>
         <asp:TextBox ID="tbxEmail" runat="server"></asp:TextBox>
         <label>Wachtwoord</label>

@@ -2,6 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Content" runat="server">
     <div class="row">
+        <%--Op deze pagina wordt het van te voren gekozen product uitgewerkt tot een productpagina--%>
         <form class="form-horizontal" role="form" runat="server">
             <div class="col-md-6">
                 <asp:Image ID="imgProduct" CssClass="productPaginaImage" runat="server" />

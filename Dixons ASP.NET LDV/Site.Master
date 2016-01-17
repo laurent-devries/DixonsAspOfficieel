@@ -113,7 +113,7 @@
                                 <li><a runat="server" href="Pages/LogIn.aspx">LogIn</a></li>
                                 <li><a runat="server" href="Pages/Registration.aspx">Register</a></li>
                             </ul>
-                        </div>
+                        </div> 
                     </div>
                 </div>
             </div>

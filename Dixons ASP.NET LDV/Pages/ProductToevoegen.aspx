@@ -4,6 +4,8 @@
     <h2>Product Toevoegen</h2>
     <div class="row">
         <div class="col-md-5">
+            <%--Een nieuw product toevoegen aan de database. Er moeten 2 subcategorien worden gekozen
+                en alle gegevens moeten worden ingevuld--%>
             <form class="form-horizontal" role="form" runat="server">
                 <div class="form-group">
                     <label class="control-label col-sm-4" for="email">Naam:</label>
