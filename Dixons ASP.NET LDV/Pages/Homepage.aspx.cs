@@ -15,6 +15,15 @@ namespace Dixons_ASP.NET_LDV
         {
             administratie = new Administratie();
 
+            if (Session["email"] != null)
+            {
+                btnUitloggen.Visible = true;
+            }
+            else
+            {
+                btnUitloggen.Visible = false;
+            }
+
             if (!Page.IsPostBack)
             {
                 lbCategorien.Items.Clear();
@@ -23,6 +32,8 @@ namespace Dixons_ASP.NET_LDV
                 {
                     lbCategorien.Items.Add(c.CategorieNaam);
                 }
+
+                
             }
             
 
@@ -61,6 +72,16 @@ namespace Dixons_ASP.NET_LDV
             }
             string postbackurl = string.Format("~/Pages/CategoriePage.aspx?id={0}", categorie.CategorieId);
             Response.Redirect(postbackurl);
+        }
+
+        protected void btnUitloggen_OnClick(object sender, EventArgs e)
+        {
+            if (Session["email"] != null)
+            {
+                Session.Clear();
+                Session.Abandon();
+                Response.Redirect("LogIn.aspx");
+            }
         }
     }
 }

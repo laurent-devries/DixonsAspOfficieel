@@ -5,6 +5,7 @@
             <div class="container">
                 <div class="row">
                     <asp:Label id="lblIngelogd" runat="server"></asp:Label>
+                    <asp:Button id="btnUitloggen" runat="server" OnClick="btnUitloggen_OnClick"/>
                     <div class="col-md-3" id="leftCol">
                         <div class="well">
                             <ul class="nav nav-stacked" id="sidebar">
