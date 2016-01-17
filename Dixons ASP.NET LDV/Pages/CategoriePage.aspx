@@ -7,9 +7,9 @@
                     <div class="col-md-3" id="leftCol">
                         <div class="well">
                             <ul class="nav nav-stacked" id="sidebar">
-                                <asp:ListBox CssClass="list-group"  ID="lbCategorien" runat="server">
+                                <asp:ListBox CssClass="list-group"  ID="lbCategorien" runat="server" AutoPostBack="False">
                                     <asp:ListItem Text="Test1" />
-                                    <asp:ListItem Text="Test2" />
+                                    <asp:ListItem Text="Test2" /> 
                                 </asp:ListBox>
                             </ul>
                         </div>

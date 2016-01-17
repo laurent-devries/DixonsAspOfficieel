@@ -14,6 +14,17 @@ namespace Dixons_ASP.NET_LDV
         protected void Page_Load(object sender, EventArgs e)
         {
             administratie = new Administratie();
+
+            if (!Page.IsPostBack)
+            {
+                lbCategorien.Items.Clear();
+                List<Categorie> alleCategories = administratie.LaadParentCategories();
+                foreach (Categorie c in alleCategories)
+                {
+                    lbCategorien.Items.Add(c.CategorieNaam);
+                }
+            }
+            
             List<Product> products = administratie.GetAlleProducten();
 
             if (products != null)
@@ -42,15 +53,35 @@ namespace Dixons_ASP.NET_LDV
                     };
 
                     productPanel.Controls.Add(imageButton);
-                    productPanel.Controls.Add(new Literal {Text = "<br/>"});
+                    productPanel.Controls.Add(new Literal { Text = "<br/>" });
                     productPanel.Controls.Add(lblName);
-                    productPanel.Controls.Add(new Literal {Text = "<br/>"});
+                    productPanel.Controls.Add(new Literal { Text = "<br/>" });
                     productPanel.Controls.Add(lblPrice);
 
                     pnlProducts.Controls.Add(productPanel);
                 }
             }
-            else pnlProducts.Controls.Add(new Literal {Text = "no products found!"});
+            else pnlProducts.Controls.Add(new Literal { Text = "no products found!" });
+        }
+
+        protected void lbCategorien_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+
+
+        }
+
+        protected void btnBevestigCategorie_OnClick(object sender, EventArgs e)
+        {
+            Categorie categorie = null;
+            foreach (Categorie c in administratie.LaadParentCategories())
+            {
+                if (c.CategorieNaam == lbCategorien.SelectedItem.Text)
+                {
+                    categorie = c;
+                }
+            }
+            string postbackurl = string.Format("~/Pages/CategoriePage.aspx?id={0}", categorie.CategorieId);
+            Response.Redirect(postbackurl);
         }
     }
 }

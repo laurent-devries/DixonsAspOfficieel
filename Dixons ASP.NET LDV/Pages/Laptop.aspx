@@ -10,10 +10,11 @@
                     <div class="col-md-3" id="leftCol">
                         <div class="well">
                             <ul class="nav nav-stacked" id="sidebar">
-                                <asp:ListBox CssClass="list-group"  ID="lbCategorien" runat="server">
+                                <asp:ListBox CssClass="list-group"  ID="lbCategorien" runat="server" >
                                     <asp:ListItem Text="Test1" />
                                     <asp:ListItem Text="Test2" />
                                 </asp:ListBox>
+                                <asp:Button ID="btnBevestigCategorie" Text="Ga naar categorie" runat="server" OnClick="btnBevestigCategorie_OnClick"/>
                             </ul>
                         </div>
                     </div>

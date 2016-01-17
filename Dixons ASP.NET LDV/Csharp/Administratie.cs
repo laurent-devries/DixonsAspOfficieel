@@ -126,10 +126,28 @@ namespace Dixons_ASP.NET_LDV.Csharp
            db.UpdateExemplaarMetOrder(serienummer, orderId);   
         }
 
+        public List<Categorie> LaadCategories()
+        {
+            List<Categorie> categories = db.GetAlleCategorien();
+            return categories;
+        } 
+
         public List<Categorie> LaadSubCategories(int parentCategorieId)
+        {
+            List<Categorie> categories = db.GetAllChildCategorien(parentCategorieId);
+            return categories;
+        }
+
+        public List<Categorie> LaadSubSubCategories(int parentCategorieId)
         {
             List<Categorie> categories = db.GetAllSecondChildCategorien(parentCategorieId);
             return categories;
-        } 
+        }
+
+        public List<Categorie> LaadParentCategories()
+        {
+            List<Categorie> categories = db.GetAlleParentCategorien();
+            return categories;
+        }
     }
 }
