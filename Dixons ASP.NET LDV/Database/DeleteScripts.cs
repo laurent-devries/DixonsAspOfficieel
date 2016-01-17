@@ -28,5 +28,19 @@ namespace Dixons_ASP.NET_LDV.Database
             }
 
         }
+
+        public void DeleteBlogBericht(BlogBericht blogbericht)
+        {
+            using (OracleConnection connection = Connection)
+            {
+                string delete = "DELETE BLOGBERICHT WHERE BLOGBERICHTID = :ID";
+                using (OracleCommand command = new OracleCommand(delete, connection))
+                {
+                    command.Parameters.Add(new OracleParameter("ID", blogbericht.BlogBerichtId));
+                    command.ExecuteNonQuery();
+                }
+            }
+
+        }
     }
 }

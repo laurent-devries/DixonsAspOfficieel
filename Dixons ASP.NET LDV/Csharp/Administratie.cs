@@ -154,5 +154,10 @@ namespace Dixons_ASP.NET_LDV.Csharp
         {
             db.InsertBlogBericht(blogbericht);
         }
+
+        public void DeleteBlogBericht(BlogBericht blogBericht)
+        {
+            db.DeleteBlogBericht(blogBericht);
+        }
     }
 }

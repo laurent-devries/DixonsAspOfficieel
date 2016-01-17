@@ -206,6 +206,7 @@
     <Content Include="Images\windowsad.jpg" />
     <Content Include="Pages\Bloglezer.aspx" />
     <Content Include="Pages\BlogToevoegen.aspx" />
+    <Content Include="Pages\BlogVerwijderen.aspx" />
     <Content Include="Pages\CategoriePage.aspx" />
     <Content Include="Pages\LogIn.aspx" />
     <Content Include="Pages\ProductPage.aspx" />
@@ -309,6 +310,13 @@
     </Compile>
     <Compile Include="Pages\BlogToevoegen.aspx.designer.cs">
       <DependentUpon>BlogToevoegen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\BlogVerwijderen.aspx.cs">
+      <DependentUpon>BlogVerwijderen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\BlogVerwijderen.aspx.designer.cs">
+      <DependentUpon>BlogVerwijderen.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\CategoriePage.aspx.cs">
       <DependentUpon>CategoriePage.aspx</DependentUpon>

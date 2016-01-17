@@ -59,6 +59,7 @@
                                     <ul class="dropdown-menu">
                                         <li><a runat="server" href="Pages/Blog.aspx">Blog</a></li>
                                         <li><a runat="server" href="Pages/BlogToevoegen.aspx">Blog Toevoegen</a></li>
+                                        <li><a runat="server" href="Pages/BlogVerwijderen.aspx">Blog Verwijderen</a></li>
                                     </ul>
                                 </li>
                                 

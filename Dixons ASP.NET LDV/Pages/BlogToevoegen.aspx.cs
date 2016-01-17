@@ -56,7 +56,7 @@ namespace Dixons_ASP.NET_LDV.Pages
 
         protected void ddlSubCategorien_OnSelectedIndexChanged(object sender, EventArgs e)
         {
-            LoadAlleSecondSubCategorien(administratie.FindCategorieFromList(ddlSubCategorien.Text, administratie.LaadSubCategories(administratie.FindCategorieFromList(ddlCategorien.Text, administratie.LaadParentCategories()))));
+        LoadAlleSecondSubCategorien(administratie.FindCategorieFromList(ddlSubCategorien.Text, administratie.LaadSubCategories(administratie.FindCategorieFromList(ddlCategorien.Text, administratie.LaadParentCategories()))));
         }
 
         protected void ddlSecondSubCategorien_OnSelectedIndexChanged(object sender, EventArgs e)

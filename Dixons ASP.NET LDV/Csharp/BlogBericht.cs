@@ -24,5 +24,10 @@ namespace Dixons_ASP.NET_LDV.Csharp
             AfbeeldingPath = afbeeldingPath;
             Categorie = categorie;
         }
+
+        public override string ToString()
+        {
+            return Titel;
+        }
     }
 }
