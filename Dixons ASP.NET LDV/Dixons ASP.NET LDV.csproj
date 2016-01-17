@@ -227,7 +227,6 @@
     <Content Include="Test\ResetPasswordConfirmation.aspx" />
     <Content Include="Test\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Test\VerifyPhoneNumber.aspx" />
-    <Content Include="Pages\Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
@@ -243,14 +242,8 @@
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Pages\Homepage.aspx" />
     <Content Include="Images\Dixons_Logo.jpg" />
-    <Content Include="Pages\Apple.aspx" />
     <Content Include="Pages\Blog.aspx" />
-    <Content Include="Pages\Laptop.aspx" />
-    <Content Include="Pages\PC.aspx" />
     <Content Include="Pages\Registration.aspx" />
-    <Content Include="Pages\SmartLiving.aspx" />
-    <Content Include="Pages\Smartphone.aspx" />
-    <Content Include="Pages\Tablet.aspx" />
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -472,13 +465,6 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="Pages\Contact.aspx.cs">
-      <DependentUpon>Contact.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\Contact.aspx.designer.cs">
-      <DependentUpon>Contact.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Csharp\Account.cs" />
     <Compile Include="Csharp\Administratie.cs" />
     <Compile Include="Csharp\Adres.cs" />
@@ -501,13 +487,6 @@
     <Compile Include="Pages\Homepage.aspx.designer.cs">
       <DependentUpon>Homepage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Apple.aspx.cs">
-      <DependentUpon>Apple.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\Apple.aspx.designer.cs">
-      <DependentUpon>Apple.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Pages\Blog.aspx.cs">
       <DependentUpon>Blog.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -515,42 +494,7 @@
     <Compile Include="Pages\Blog.aspx.designer.cs">
       <DependentUpon>Blog.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Laptop.aspx.cs">
-      <DependentUpon>Laptop.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\Laptop.aspx.designer.cs">
-      <DependentUpon>Laptop.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Pages\PC.aspx.cs">
-      <DependentUpon>PC.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\PC.aspx.designer.cs">
-      <DependentUpon>PC.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\SmartLiving.aspx.cs">
-      <DependentUpon>SmartLiving.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\SmartLiving.aspx.designer.cs">
-      <DependentUpon>SmartLiving.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Smartphone.aspx.cs">
-      <DependentUpon>Smartphone.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\Smartphone.aspx.designer.cs">
-      <DependentUpon>Smartphone.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Tablet.aspx.cs">
-      <DependentUpon>Tablet.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\Tablet.aspx.designer.cs">
-      <DependentUpon>Tablet.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Pages\Registration.aspx.cs">
       <DependentUpon>Registration.aspx</DependentUpon>

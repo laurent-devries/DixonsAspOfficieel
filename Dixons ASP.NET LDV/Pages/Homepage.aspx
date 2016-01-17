@@ -13,6 +13,7 @@
                                     <asp:ListItem Text="Test2" />
                                 </asp:ListBox>
                             </ul>
+                            <asp:Button ID="btnBevestigCategorie" Text="Ga naar categorie" runat="server" OnClick="btnBevestigCategorie_OnClick"/>
                         </div>
                     </div>
                     <div class="col-md-9">

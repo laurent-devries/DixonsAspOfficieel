@@ -47,67 +47,14 @@
                         <div class="colorNav">
                             <ul class="nav navbar-nav">
                                 <li class="dropdown">
-                                    <a href="Laptop.aspx" class="dropdown-toggle disabled" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Laptop <span class="caret"></span></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#">Action</a></li>
-                                        <li><a href="#">Another action</a></li>
-                                        <li><a href="#">Something else here</a></li>
-                                        <li role="separator" class="divider"></li>
-                                        <li><a href="#">Separated link</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown">
-                                    <a href="Tablet.aspx" class="dropdown-toggle disabled" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tablet <span class="caret"></span></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#">Action</a></li>
-                                        <li><a href="#">Another action</a></li>
-                                        <li><a href="#">Something else here</a></li>
-                                        <li role="separator" class="divider"></li>
-                                        <li><a href="#">Separated link</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown">
-                                    <a href="Smartphone.aspx" class="dropdown-toggle disabled" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Smartphone <span class="caret"></span></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#">Action</a></li>
-                                        <li><a href="#">Another action</a></li>
-                                        <li><a href="#">Something else here</a></li>
-                                        <li role="separator" class="divider"></li>
-                                        <li><a href="#">Separated link</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown">
-                                    <a href="SmartLiving.aspx" class="dropdown-toggle disabled" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Smart Living <span class="caret"></span></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#">Action</a></li>
-                                        <li><a href="#">Another action</a></li>
-                                        <li><a href="#">Something else here</a></li>
-                                        <li role="separator" class="divider"></li>
-                                        <li><a href="#">Separated link</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown">
-                                    <a href="PC.aspx" class="dropdown-toggle disabled" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">PC <span class="caret"></span></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#">Action</a></li>
-                                        <li><a href="#">Another action</a></li>
-                                        <li><a href="#">Something else here</a></li>
-                                        <li role="separator" class="divider"></li>
-                                        <li><a href="#">Separated link</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown">
                                     <a href="#" class="dropdown-toggle enabled" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Productbeheer <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
                                         <li><a href="/Pages/ProductToevoegen.aspx">Product Toevoegen</a></li>
                                         <li><a href="/Pages/ProductVerwijderen.aspx">Product Verwijderen</a></li>
-                                        <li><a href="#">Something else here</a></li>
-                                        <li role="separator" class="divider"></li>
-                                        <li><a href="#">Separated link</a></li>
+                                        <li><a href="/Pages/ProductWijzigen.aspx">Product Wijzigen</a></li>
                                     </ul>
                                 </li>
                                 <li><a runat="server" href="Pages/Blog.aspx">Blog</a></li>
-                                <li><a runat="server" href="Pages/Contact.aspx">Contact</a></li>
                             </ul>
                             <ul class="nav navbar-nav navbar-right">
                                 <li><a runat="server" href="Pages/LogIn.aspx">LogIn</a></li>

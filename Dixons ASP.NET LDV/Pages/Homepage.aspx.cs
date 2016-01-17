@@ -14,6 +14,16 @@ namespace Dixons_ASP.NET_LDV
         protected void Page_Load(object sender, EventArgs e)
         {
             administratie = new Administratie();
+
+            if (!Page.IsPostBack)
+            {
+                lbCategorien.Items.Clear();
+                List<Categorie> alleCategories = administratie.LaadParentCategories();
+                foreach (Categorie c in alleCategories)
+                {
+                    lbCategorien.Items.Add(c.CategorieNaam);
+                }
+            }
             
 
             if (Session["email"] != null)
@@ -37,6 +47,20 @@ namespace Dixons_ASP.NET_LDV
             {
                 lbSubCats4.Items.Add(c.ToString());
             }
+        }
+
+        protected void btnBevestigCategorie_OnClick(object sender, EventArgs e)
+        {
+            Categorie categorie = null;
+            foreach (Categorie c in administratie.LaadParentCategories())
+            {
+                if (c.CategorieNaam == lbCategorien.SelectedItem.Text)
+                {
+                    categorie = c;
+                }
+            }
+            string postbackurl = string.Format("~/Pages/CategoriePage.aspx?id={0}", categorie.CategorieId);
+            Response.Redirect(postbackurl);
         }
     }
 }

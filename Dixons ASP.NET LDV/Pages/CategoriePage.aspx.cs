@@ -14,6 +14,18 @@ namespace Dixons_ASP.NET_LDV.Pages
         protected void Page_Load(object sender, EventArgs e)
         {
             administratie = new Administratie();
+
+            if (!Page.IsPostBack)
+            {
+                lbCategorien.Items.Clear();
+                List<Categorie> alleCategories = administratie.LaadParentCategories();
+                foreach (Categorie c in alleCategories)
+                {
+                    lbCategorien.Items.Add(c.CategorieNaam);
+                }
+            }
+
+
             int categorieId;
             List<Product> productenVanCategorie = new List<Product>();
             if (!string.IsNullOrWhiteSpace(Request.QueryString["id"]))
@@ -47,7 +59,8 @@ namespace Dixons_ASP.NET_LDV.Pages
                     {
                         ImageUrl = "~/Images/Products/" + p.AfbeeldingPath,
                         CssClass = "productImage",
-                        PostBackUrl = string.Format("~/Pages/ProductPage.aspx?id={0}", p.ProductId)
+                        PostBackUrl = string.Format("~/Pages/ProductPage.aspx?id={0}", p.ProductId),
+                        AlternateText = "ProductAfbeelding"
                     };
                     Label lblName = new Label
                     {
@@ -70,6 +83,20 @@ namespace Dixons_ASP.NET_LDV.Pages
                 }
             }
             else pnlProducts.Controls.Add(new Literal { Text = "no products found!" });
+        }
+
+        protected void btnBevestigCategorie_OnClick(object sender, EventArgs e)
+        {
+            Categorie categorie = null;
+            foreach (Categorie c in administratie.LaadParentCategories())
+            {
+                if (c.CategorieNaam == lbCategorien.SelectedItem.Text)
+                {
+                    categorie = c;
+                }
+            }
+            string postbackurl = string.Format("~/Pages/CategoriePage.aspx?id={0}", categorie.CategorieId);
+            Response.Redirect(postbackurl);
         }
     }
 }

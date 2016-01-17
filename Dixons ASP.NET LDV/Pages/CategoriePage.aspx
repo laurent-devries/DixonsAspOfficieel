@@ -11,6 +11,7 @@
                                     <asp:ListItem Text="Test1" />
                                     <asp:ListItem Text="Test2" /> 
                                 </asp:ListBox>
+                                <asp:Button ID="btnBevestigCategorie" Text="Ga naar categorie" runat="server" OnClick="btnBevestigCategorie_OnClick"/>
                             </ul>
                         </div>
                     </div>
